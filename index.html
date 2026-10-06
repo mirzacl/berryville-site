@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BerryVille — a cosy berry restaurant game</title>
+<meta name="description" content="Grow a tiny berry stand into a berry restaurant empire. Seven restaurants in every city, eleven cities to visit, ten pals to meet and a chef to dress. Coming soon to iPhone.">
+<meta name="theme-color" content="#ad99da">
+<meta name="color-scheme" content="light">
+<link rel="canonical" href="https://berryville.app/">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="BerryVille">
+<meta property="og:title" content="BerryVille — a cosy berry restaurant game">
+<meta property="og:description" content="Grow a tiny berry stand into a berry restaurant empire. Coming soon to iPhone.">
+<meta property="og:url" content="https://berryville.app/">
+<meta property="og:image" content="https://berryville.app/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  @font-face {
+    font-family: "Jersey 10";
+    src: url("/assets/fonts/Jersey10-Regular.ttf") format("truetype");
+    font-display: swap;
+  }
+  :root {
+    --sky: #ad99da; --sky-2: #c3ade3; --cream: #fff4d9; --paper: #fffaf4; --ink: #4a3560; --muted: #6f5785;
+    --berry: #d9567b; --berry-lip: #9e4469; --pink: #ee83a2; --pink-soft: #fde3ee;
+    --leaf: #77ac79; --leaf-lip: #537c69; --leaf-soft: #e3f0d2; --honey: #eebd60; --lavender: #d8c2e8;
+    --pixel: "Jersey 10", ui-rounded, "Arial Rounded MT Bold", system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--cream); color: var(--ink);
+    font: 18px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  img { max-width: 100%; display: block; }
+  .pixel { image-rendering: pixelated; image-rendering: crisp-edges; }
+  a { color: var(--berry-lip); }
+  a:focus-visible, .button:focus-visible { outline: 3px solid var(--honey); outline-offset: 3px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+  h1, h2, h3 { font-family: var(--pixel); font-weight: 400; line-height: 1; margin: 0; letter-spacing: .5px; }
+
+  /* ---- hero ---- */
+  .hero { background: var(--sky); text-align: center; overflow: hidden; }
+  .hero-text { padding: 40px 16px 8px; }
+  .hero h1 { display: flex; justify-content: center; }
+  .hero h1 img { width: min(560px, 86vw); height: auto; }
+  .tagline {
+    display: inline-block; margin: 20px auto 0; padding: 10px 18px; max-width: 34em;
+    background: var(--paper); border: 3px solid var(--ink); border-radius: 14px; box-shadow: 0 4px 0 var(--ink);
+    font-size: clamp(17px, 2.4vw, 21px); font-weight: 600;
+  }
+  .pill-row { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px;
+    background: var(--ink); color: var(--paper); font-family: var(--pixel); font-size: 22px; line-height: 1;
+  }
+  .pill .dot { width: 10px; height: 10px; background: var(--honey); border-radius: 2px; }
+  .hero-art { width: 100%; height: clamp(260px, 46vw, 600px); object-fit: cover; object-position: 50% 100%; margin-top: -2px; }
+
+  /* ---- a strip of gingham between sections ---- */
+  .gingham {
+    height: 22px; background-color: var(--pink-soft); border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink);
+    background-image: linear-gradient(90deg, rgba(217, 86, 123, .35) 50%, transparent 50%), linear-gradient(rgba(217, 86, 123, .35) 50%, transparent 50%);
+    background-size: 22px 22px;
+  }
+  .gingham.leaf {
+    background-color: var(--leaf-soft);
+    background-image: linear-gradient(90deg, rgba(119, 172, 121, .35) 50%, transparent 50%), linear-gradient(rgba(119, 172, 121, .35) 50%, transparent 50%);
+  }
+
+  /* ---- intro ---- */
+  .intro { padding-top: 56px; padding-bottom: 24px; text-align: center; }
+  .intro h2 { font-size: clamp(38px, 6vw, 56px); }
+  .intro p { max-width: 40em; margin: 16px auto 0; color: var(--muted); font-size: 19px; }
+
+  /* ---- features ---- */
+  .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding: 40px 0; }
+  .feature:nth-of-type(even) .phone-col { order: 2; }
+  .feature h3 { font-size: clamp(34px, 4.6vw, 46px); color: var(--ink); }
+  .feature p { margin: 14px 0 0; color: var(--muted); }
+  .feature .kicker {
+    display: inline-block; margin-bottom: 12px; padding: 4px 12px; border: 2px solid var(--ink); border-radius: 8px;
+    background: var(--honey); font-family: var(--pixel); font-size: 20px; line-height: 1.1; box-shadow: 0 3px 0 var(--ink);
+  }
+  .phone-col { display: flex; justify-content: center; }
+  .phone {
+    width: min(300px, 78vw); border: 10px solid var(--ink); border-radius: 38px; overflow: hidden; background: var(--ink);
+    box-shadow: 0 8px 0 rgba(74, 53, 96, .25);
+  }
+  .phone img { width: 100%; height: auto; aspect-ratio: 540 / 1170; }
+
+  /* ---- gallery ---- */
+  .gallery { padding: 56px 0 32px; background: var(--lavender); }
+  .gallery h2 { text-align: center; font-size: clamp(36px, 5vw, 50px); }
+  .strip {
+    display: flex; gap: 18px; overflow-x: auto; padding: 28px 16px 20px; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  .strip .phone { flex: 0 0 auto; width: 220px; border-width: 8px; border-radius: 30px; scroll-snap-align: center; }
+  .strip-hint { text-align: center; color: var(--muted); font-size: 15px; margin: 0; }
+
+  /* ---- promises ---- */
+  .promises { padding-top: 56px; padding-bottom: 56px; }
+  .promises h2 { text-align: center; font-size: clamp(36px, 5vw, 50px); }
+  .cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+  .card {
+    background: var(--paper); border: 3px solid var(--ink); border-radius: 16px; padding: 18px; box-shadow: 0 5px 0 var(--ink);
+  }
+  .card h3 { font-size: 28px; }
+  .card p { margin: 8px 0 0; font-size: 16px; color: var(--muted); }
+  .card .badge { width: 40px; height: 40px; border-radius: 10px; border: 3px solid var(--ink); margin-bottom: 12px; display: grid; place-items: center; font-family: var(--pixel); font-size: 24px; color: var(--paper); }
+
+  /* ---- faq ---- */
+  .faq { padding-top: 8px; padding-bottom: 56px; }
+  .faq h2 { text-align: center; font-size: clamp(36px, 5vw, 50px); margin-bottom: 20px; }
+  details {
+    max-width: 720px; margin: 12px auto; background: var(--paper); border: 3px solid var(--ink); border-radius: 14px;
+    box-shadow: 0 4px 0 var(--ink); padding: 0 18px;
+  }
+  summary { cursor: pointer; padding: 14px 0; font-weight: 700; list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-family: var(--pixel); font-size: 28px; line-height: .8; color: var(--berry); }
+  details[open] summary::after { content: "–"; }
+  details p { margin: 0 0 16px; color: var(--muted); }
+
+  /* ---- contact + footer ---- */
+  .contact { text-align: center; padding: 48px 16px; background: var(--sky-2); }
+  .contact h2 { font-size: clamp(36px, 5vw, 50px); }
+  .contact p { margin: 12px auto 22px; max-width: 34em; }
+  .button {
+    display: inline-block; padding: 14px 26px; border-radius: 14px; border: 3px solid var(--ink); text-decoration: none;
+    background: var(--berry); color: var(--paper); font-family: var(--pixel); font-size: 26px; line-height: 1;
+    box-shadow: 0 5px 0 var(--berry-lip), 0 5px 0 3px var(--ink);
+  }
+  .button:hover { filter: brightness(1.05); }
+  .button:active { transform: translateY(3px); box-shadow: 0 2px 0 var(--berry-lip), 0 2px 0 3px var(--ink); }
+  footer { background: var(--ink); color: var(--lavender); padding: 28px 16px 36px; text-align: center; font-size: 15px; }
+  footer nav { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-bottom: 12px; }
+  footer a { color: var(--paper); text-decoration: none; font-family: var(--pixel); font-size: 22px; }
+  footer a:hover { text-decoration: underline; }
+
+  @media (max-width: 860px) {
+    .cards { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 720px) {
+    .feature { grid-template-columns: 1fr; gap: 24px; text-align: center; padding: 28px 0; }
+    .feature:nth-of-type(even) .phone-col { order: 0; }
+    .cards { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-text">
+    <h1><img class="pixel" src="/assets/wordmark.png" width="512" height="120" alt="BerryVille"></h1>
+    <p class="tagline">Grow a tiny berry stand into a berry restaurant empire.</p>
+    <div class="pill-row"><span class="pill"><span class="dot" aria-hidden="true"></span>Coming soon to iPhone</span></div>
+  </div>
+  <img class="hero-art pixel" src="/assets/hero.png" width="1408" height="640" alt="The BerryVille berry stand on a grassy hill under a lavender sky, with a big strawberry on its striped awning.">
+</header>
+<div class="gingham" aria-hidden="true"></div>
+
+<main>
+  <section class="intro wrap">
+    <h2>A cosy restaurant game, made of berries</h2>
+    <p>Customers order, your cooks walk to the bench, make the dish and carry it over, and every delivery pays. Upgrade your recipes, hire a team, and grow from a street stand to a busy bistro. Everything on the menu is made with berries: smoothies, pancakes, waffles, pies and froyo.</p>
+  </section>
+
+  <div class="wrap">
+    <section class="feature">
+      <div class="phone-col"><div class="phone"><img src="/assets/shots/cafe.webp" width="540" height="1170" loading="lazy" alt="A busy berry café: guests at tables, cooks at their benches."></div></div>
+      <div>
+        <span class="kicker">Seven restaurants</span>
+        <h3>From a stand to a bistro</h3>
+        <p>Every city has seven restaurants: a stand, a bigger stand, a food truck, a café, a diner, a drive-thru and a sit-down bistro with waiters. Each one brings something new: tips, specials, drive-thru cars, table service and more.</p>
+      </div>
+    </section>
+
+    <section class="feature">
+      <div class="phone-col"><div class="phone"><img src="/assets/shots/passport.webp" width="540" height="1170" loading="lazy" alt="The Grand Tour passport, a page for Raspberry Bay with its restaurants stamped."></div></div>
+      <div>
+        <span class="kicker">The Grand Tour</span>
+        <h3>Eleven cities to visit</h3>
+        <p>Move your business from BerryVille to the seaside of Raspberry Bay and on through the Grand Tour. Further along, cities bring landmarks and twists of their own, and your passport fills with stamps as you go.</p>
+      </div>
+    </section>
+
+    <section class="feature">
+      <div class="phone-col"><div class="phone"><img src="/assets/shots/chef.webp" width="540" height="1170" loading="lazy" alt="The chef's dressing room, with hats and aprons on pegs."></div></div>
+      <div>
+        <span class="kicker">The dressing room</span>
+        <h3>Dress your chef</h3>
+        <p>Over a hundred pieces to find: hats, aprons, tools, pins and lockets, in full sets with their own trims. Every piece you wear helps your restaurants sell.</p>
+      </div>
+    </section>
+
+    <section class="feature">
+      <div class="phone-col"><div class="phone"><img src="/assets/shots/pals.webp" width="540" height="1170" loading="lazy" alt="The pal meadow, with pals strolling around a picnic blanket."></div></div>
+      <div>
+        <span class="kicker">Ten pals</span>
+        <h3>Little helpers with big jobs</h3>
+        <p>Hatch pals from eggs and watch them work: a bee who brings golden guests, a hedgehog who tops dishes with blackberries, a mouse who polishes the tip jar. They grow from Sprout to Bloom to Ripe.</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="gallery" aria-labelledby="gallery-title">
+    <h2 id="gallery-title">A look inside</h2>
+    <div class="strip">
+      <div class="phone"><img src="/assets/shots/bistro.webp" width="540" height="1170" loading="lazy" alt="The BerryVille Bistro with its drive-thru lane."></div>
+      <div class="phone"><img src="/assets/shots/truck.webp" width="540" height="1170" loading="lazy" alt="A smoothie truck by the sea."></div>
+      <div class="phone"><img src="/assets/shots/chest.webp" width="540" height="1170" loading="lazy" alt="A golden chest opened, with new pieces for the chef."></div>
+      <div class="phone"><img src="/assets/shots/shop.webp" width="540" height="1170" loading="lazy" alt="The berry shop."></div>
+      <div class="phone"><img src="/assets/shots/cafe.webp" width="540" height="1170" loading="lazy" alt="The berry café."></div>
+      <div class="phone"><img src="/assets/shots/pals.webp" width="540" height="1170" loading="lazy" alt="The pal meadow."></div>
+    </div>
+    <p class="strip-hint">Swipe for more</p>
+  </section>
+  <div class="gingham leaf" aria-hidden="true"></div>
+
+  <section class="promises wrap" aria-labelledby="promises-title">
+    <h2 id="promises-title">Made to be cosy</h2>
+    <div class="cards">
+      <div class="card"><div class="badge" style="background: var(--berry)" aria-hidden="true">1</div><h3>No account</h3><p>Open the game and play. There is nothing to sign up for.</p></div>
+      <div class="card"><div class="badge" style="background: var(--leaf)" aria-hidden="true">2</div><h3>Plays offline</h3><p>Your restaurants keep cooking on the train, on a plane or in the garden.</p></div>
+      <div class="card"><div class="badge" style="background: var(--honey); color: var(--ink)" aria-hidden="true">3</div><h3>Your progress, your phone</h3><p>Your game is saved on your iPhone. We keep no player data on any server.</p></div>
+      <div class="card"><div class="badge" style="background: var(--pink)" aria-hidden="true">4</div><h3>Away earnings</h3><p>Close the game and your shops keep earning for a while. Come back to a pile of coins.</p></div>
+    </div>
+  </section>
+
+  <section class="faq wrap" aria-labelledby="faq-title">
+    <h2 id="faq-title">Questions</h2>
+    <details>
+      <summary>When can I play?</summary>
+      <p>BerryVille is coming to the App Store for iPhone soon. This page will have the link the day it is out.</p>
+    </details>
+    <details>
+      <summary>Will it be free?</summary>
+      <p>Yes, BerryVille will be free to download.</p>
+    </details>
+    <details>
+      <summary>Is it coming to Android?</summary>
+      <p>iPhone comes first. If players enjoy it, an Android version is the next step.</p>
+    </details>
+    <details>
+      <summary>Do I need an account or the internet?</summary>
+      <p>No. There is no account, and the game plays without an internet connection. Your progress is saved on your iPhone.</p>
+    </details>
+    <details>
+      <summary>How do I send feedback?</summary>
+      <p>In the game, open Settings and tap SEND FEEDBACK, or write to <a href="mailto:contact@berryville.app">contact@berryville.app</a>. Every message is read.</p>
+    </details>
+  </section>
+</main>
+
+<section class="contact" aria-labelledby="contact-title">
+  <h2 id="contact-title">Say hello</h2>
+  <p>Ideas, questions, a bug, or just a favourite berry: we would love to hear from you.</p>
+  <a class="button" href="mailto:contact@berryville.app?subject=Hello%20BerryVille">contact@berryville.app</a>
+</section>
+
+<footer>
+  <nav aria-label="Footer">
+    <a href="/support/">Support</a>
+    <a href="/privacy/">Privacy</a>
+    <a href="mailto:contact@berryville.app">Contact</a>
+  </nav>
+  <div>© 2026 BerryVille. All the berries are original pixel art.</div>
+</footer>
+
+</body>
+</html>
