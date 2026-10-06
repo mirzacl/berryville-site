@@ -84,7 +84,8 @@
     <li>Your progress is saved <b>on your iPhone</b>.</li>
     <li>If you e-mail us, we receive what you send, and use it only to answer you.</li>
     <li>Purchases, where the game offers them, are handled by <b>Apple</b>.</li>
-    <li>Optional videos, where the game offers them, come from <b>Unity</b>. They are not personalized, and the game never asks to track you.</li>
+    <li>Optional videos, where the game offers them, come from <b>Unity</b>. They are not personalized. Unity’s advert software in the game collects some data about your device and the adverts you see (see Optional videos); the App Store privacy label lists the same. The game never asks to track you.</li>
+    <li>In Europe, <b>Google’s consent message</b> asks for your consent before any advert software starts.</li>
     <li>We do not sell your data.</li>
   </ul>
 </section>
@@ -100,42 +101,46 @@
     <li><b>Safety copies</b> of your progress, so a damaged save can be recovered.</li>
     <li><b>A Support ID:</b> a random code such as <code>BV-7K3M-Q2XD</code>, made on your iPhone the first time it is needed. It is not linked to your name, your Apple Account or your iPhone. It only helps us tell messages apart.</li>
     <li><b>Where the game offers purchases:</b> a record of what you bought (the item and a short code for each purchase), so that a purchase is never lost or counted twice. It holds no card or payment details.</li>
-    <li><b>Where the game offers videos:</b> your answer to the birth month and year question (the month and the year only), your answer to the video question in Europe, and a short list of your last videos (the time, the reward and the result), so we can help if a reward goes missing.</li>
+    <li><b>Where the game offers videos:</b> your answer to the birth month and year question (the month and the year, and the day you answered; no day of birth); in Europe, the choices you made on Google’s consent message (kept by Google’s software on your iPhone, in the standard format other apps use); and a short list of your last videos (the time, the reward, the result, and each advert’s network, creative ID and auction ID), so we can help if a reward goes missing.</li>
   </ul>
 
-  <h2>What we collect</h2>
+  <h2>What the game and its advert software collect</h2>
   <!-- The engineer confirms for every build you ship that Unity's engine reporting is off. -->
-  <p>Nothing, through the game. There is no account, no analytics and no server, and the game sends us no information. Unity’s own engine reporting is switched off in BerryVille.</p>
+  <p>The game itself sends us nothing. There is no account, no analytics and no server. In versions with optional videos, Unity’s advert software inside the game collects the data listed under Optional videos, and, for players aged 16 and over, Google’s consent software receives what is listed there too; the App Store privacy label shows the same list. Unity’s own engine reporting is switched off in BerryVille.</p>
   <p>Apple may show us statistics about the game in App Store Connect, such as the number of downloads, and crash reports from people who chose to share them with app developers in their iPhone’s settings. Apple collects these under <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a>.</p>
   <p>The game may ask you to rate it in <b>Apple’s own rating window</b>. Your rating and review go to Apple. We only see them on the App Store, like everyone else.</p>
   <p>The privacy policy and support links in Settings open in Safari, outside the game.</p>
 
   <h2>E-mails you send us</h2>
-  <p><b>SEND FEEDBACK</b> in Settings opens your mail app with a new e-mail to us. It adds the game’s version, your iPhone model, your iOS version and your Support ID to the e-mail. You see all of it before you send, and you can delete any of it. Nothing is sent unless you tap Send.</p>
+  <p><b>SEND FEEDBACK</b> in Settings opens your mail app with a new e-mail to us. It adds the game’s version and build number, your iPhone model, your iOS version, your Support ID and the city and restaurant you are playing to the e-mail. You see all of it before you send, and you can delete any of it. Nothing is sent unless you tap Send.</p>
+  <p><b>REPORT AN AD</b> in Settings → SUPPORT INFO copies the support page’s text (with your recent video and purchase lines and each advert’s network, creative ID and auction ID) for you to paste into a message, and opens our support page. Nothing is sent unless you send it.</p>
   <p>When you write to us, we receive your e-mail address, your message, anything you attach, and those details. We use them only to read and answer your message and to fix problems in the game. We do not sell them, share them for advertising, or add you to a mailing list. Our mailbox is provided by Hostinger.</p>
   <p>We keep e-mails only as long as we need them to help you, and delete them after 12 months at the latest. Ask us and we delete them sooner.</p>
 
   <h2>Purchases <span class="tag">Only where the game offers them</span></h2>
-  <!-- To confirm with Unity (with the C14 questions): Unity In-App Purchasing sends nothing to Unity when Unity's other services are not started. -->
+  <!-- Unity's IAP privacy page: versions before 5.4 collect no personal data (the game uses 5.3.1). The Unity Ads sentence goes if Unity confirms the purchase watcher is off (C14). -->
   <p>Payments are handled by Apple. We never see your card details, your name or your Apple Account. Apple tells the game that a purchase went through, and the game records it on your iPhone. The game uses Unity’s purchasing software (Unity In-App Purchasing) to talk to Apple’s App Store. <a href="https://www.apple.com/legal/privacy/">Apple’s privacy policy</a> applies to the payment.</p>
+  <p>Unity Ads’ software in the game can read the record of purchases you make in the game from the App Store on your iPhone; see Optional videos.</p>
   <p>Refunds are handled by Apple, at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
 
-  <h2>Optional videos <span class="tag">Only with WATCH AN AD buttons</span></h2>
-  <!-- Phrased cautiously from Unity's published answer sheets. To confirm with Unity's written answers to checklist C14 (questions 4 to 7) before the first build that shows videos. -->
-  <p>Every video is your choice. Every reward that a video can bring also has a free choice beside it.</p>
+  <h2>Optional videos <span class="tag">Only where the game offers them</span></h2>
+  <!-- Follows the App Store privacy label of 6 October 2026 (Documentation/Store/app-privacy-answers.md) and BerryAudience.ProtectEveryone = true. The purchases sentence goes if Unity confirms the purchase watcher is off for game 800389562 (checklist C14). Guideline 5.1.1(i) also asks that Unity's protection is the same or equal: a lawyer words that (Part J). -->
+  <p>Every video is your choice: a video never starts by itself, and its button shows a small video symbol and the reward. You can play the whole game without watching one.</p>
   <p>The videos come through <b>Unity LevelPlay</b>, from two advertising networks that belong to Unity Technologies: <b>Unity Ads</b> and <b>ironSource Ads</b>. The game sets them up the same way for everyone:</p>
   <ul>
-    <li>Adverts are <b>not personalized</b>: they are not chosen from what you do in other apps.</li>
-    <li>The game <b>never asks to track you</b> and does not read your iPhone’s advertising identifier (IDFA).</li>
-    <li>The game tells Unity, for every player, <b>not to sell or share</b> their data.</li>
-    <li><b>Children</b> are marked as children, so they only see adverts chosen from the game itself.</li>
-    <li>Before any advert software starts, the game asks your <b>birth month and year</b>, once. The answer stays on your iPhone and is never sent. Unity is told only whether to treat you as a child, never your age. Until you answer, no advert software starts. The game is the same whatever you answer.</li>
-    <li><b>In Europe</b> (the European Economic Area, the United Kingdom and Switzerland), the game also asks players aged 16 and over whether to allow videos, before any advert software starts. If you choose NO THANKS, no advert software starts and nothing else in the game changes. You can change your answer at any time in Settings → PRIVACY CHOICES. Players under 16 in Europe are shown no videos.</li>
+    <li><b>Every player is marked to the advert software as a child</b>, so adverts are chosen only from the game itself: they are <b>not personalized</b> and are not chosen from what you do in other apps.</li>
+    <li>The game <b>never asks to track you</b> and does not read your iPhone’s advertising identifier (IDFA). The advert software does read the iPhone’s identifier for apps from the same maker.</li>
+    <li>The game asks Unity, for every player, <b>not to sell or share</b> their data.</li>
+    <li>Before any advert software starts, the game asks your <b>birth month and year</b>, once. The answer stays on your iPhone and is never sent; Unity is never told your age. Until you answer, no advert software starts.</li>
+    <li>For players aged 16 and over, wherever they are, <b>Google’s User Messaging Platform</b> receives your IP address and basic information about your device and the app each time the game starts, to decide whether <b>Google’s consent message</b> is needed. Google is never asked about players under 16.</li>
+    <li><b>In Europe</b> (the European Economic Area, the United Kingdom and Switzerland), players aged 16 and over see Google’s consent message once, before any advert software starts; your choices are kept on your iPhone. If you do not consent to storing and reading information on your device, no advert software starts and nothing else in the game changes. You can change your choices at any time in Settings → PRIVACY CHOICES. Players under 16 in Europe see no message and no videos.</li>
   </ul>
-  <p>While it runs, Unity’s software may process: an identifier for your device that is not the advertising identifier; your IP address and the country it shows; your device model, iOS version, language and connection type; which adverts were shown, watched or tapped; how the game is used around the adverts; and performance information. Unity uses this to show adverts, count them, prevent fraud and measure how they work. Unity’s privacy policies explain what it does and how to ask Unity about your data:</p>
+  <p>While it runs, Unity’s software collects: an identifier for your iPhone (the identifier for apps from the same maker, and an install ID made by Unity), not the advertising identifier; your IP address and the country it shows; the in-app purchases you make (which item and when, as the App Store reports them), which Unity Ads’ software can read on your iPhone; which adverts were shown, watched or tapped; how the game is used around the adverts; your device’s model, maker, iOS version, language, screen size and connection type; performance information such as loading times and energy use; and any report you send from inside an advert.</p>
+  <p>Unity uses this to show and count adverts, pay for them, prevent fraud, follow each region’s rules, and analyse and improve its software. Unity keeps advert interaction data tied to an install ID for up to 12 months, and transaction records for up to 180 days for billing and fraud prevention. Unity’s and Google’s privacy policies explain what they do and how to ask them about your data:</p>
   <ul>
     <li><a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity Game Player and App User Privacy Policy</a></li>
     <li><a href="https://unity.com/legal/privacy-policy">Unity Privacy Policy</a> (which also covers ironSource)</li>
+    <li>Google (the consent message only, through Google’s User Messaging Platform): <a href="https://policies.google.com/privacy">Google Privacy Policy</a></li>
   </ul>
   <p>An advert may also show its own privacy button.</p>
 
@@ -145,7 +150,7 @@
   <h2>Children</h2>
   <!-- The promise about children's e-mails must be kept in the mailbox. It follows COPPA's one-time-answer rule; a lawyer should check it (Part J). -->
   <p>BerryVille is a game for everyone, children included. We do not knowingly collect personal data from children, and the game itself collects none.</p>
-  <p>Where the game offers videos, players under 16 are treated as children: they see only adverts chosen from the game itself, with no personalization and no advertising identifier, and in Europe they see no videos at all. Their birth month and year stay on the iPhone.</p>
+  <p>Where the game offers videos, every player is marked to the advert software as a child, so everyone sees only adverts chosen from the game itself, with no personalization and no advertising identifier. Players under 16 in Europe see no consent message and no videos at all. The birth month and year stay on the iPhone.</p>
   <p>If a child e-mails us, we use the e-mail only to answer that one message, and then delete it. A parent or guardian can write to <a href="mailto:contact@berryville.app">contact@berryville.app</a> to ask what we hold about their child (at most an e-mail) and have it deleted.</p>
   <p>On an iPhone, parents can control purchases with Apple’s Ask to Buy and Screen Time.</p>
 
@@ -153,7 +158,8 @@
   <ul>
     <li>Everything the game keeps is on your iPhone. Deleting the game deletes it.</li>
     <li>We hold nothing about you except e-mails you send us. You can ask to see them, correct them or have them deleted at <a href="mailto:contact@berryville.app">contact@berryville.app</a>.</li>
-    <li>For data processed by Unity’s advert software, use Unity’s privacy policies above. For purchases, ask Apple.</li>
+    <li>In Europe, you can change your choices on Google’s consent message at any time in Settings → PRIVACY CHOICES.</li>
+    <li>For data processed by Unity’s advert software, use Unity’s privacy policies above; for the consent message, Google’s. For purchases, ask Apple.</li>
     <li>If you live in Europe or the UK, you can also complain to your data protection authority.</li>
   </ul>
 
